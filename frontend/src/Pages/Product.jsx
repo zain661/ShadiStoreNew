@@ -7,11 +7,11 @@ const Product = () => {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  
-  useEffect(() => {
+  const url = "https://shadi-store-new.vercel.app";
+  useEffect(() => 
     const fetchProduct = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/product/${productId}`);
+        const response = await fetch(`url/product/${productId}`);
         if (!response.ok) {
           throw new Error('Product not found');
         }

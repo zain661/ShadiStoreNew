@@ -1,0 +1,73 @@
+/* General styling for the orders component */
+.orders-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the header */
+.orders-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: rgba(128, 6, 31, 0.9);
+}
+
+/* Styling for the orders table */
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.orders-table thead {
+    background-color: rgba(128, 6, 31, 0.9);
+    color: #fff;
+}
+
+.orders-table th, .orders-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.orders-table th {
+    background-color: rgba(128, 6, 31, 0.9);
+    color: #fff;
+}
+
+.orders-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.orders-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.orders-table .order-id,
+.orders-table .user-name,
+.orders-table .user-email,
+.orders-table .total-amount,
+.orders-table .status,
+.orders-table .product-name,
+.orders-table .product-quantity {
+    width: 14%;
+}
+
+/* Styling for product details within the orders */
+.product-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.product-quantity {
+    text-align: center;
+}

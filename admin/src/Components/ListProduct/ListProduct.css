@@ -1,0 +1,170 @@
+/* General styling for the component */
+.list-product {
+    width: 100%;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the header */
+.list-product h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: rgba(128, 6, 31, 0.9);
+}
+
+/* Styling for the filter and sort options */
+.filter-sort-container {
+    display: flex;
+    gap: 34px;
+    margin-bottom: 20px;
+}
+
+.filter-sort-container select {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid rgba(128, 6, 31, 0.9);
+    border-radius: 12px;
+    width: 200px; /* Adjust width as needed */
+}
+
+.filter-sort-container select:focus {
+    outline: none; /* Remove default focus outline */
+}
+
+.filter-sort-container select option {
+    padding: 10px;
+    font-size: 1em;
+    color: rgba(128, 6, 31, 0.9);
+}
+
+.filter-sort-container select option:first-child {
+    color: rgba(128, 6, 31, 0.9); /* Style for "All Categories" option */
+}
+
+/* Styling for the product list headers */
+.listproduct-format-main {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 2fr 1fr 0.5fr 0.5fr 1fr 0.5fr 0.5fr;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px 0;
+    background-color: rgba(128, 6, 31, 0.9);
+    color: #fff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Styling for each product entry */
+.listproduct-allproducts .listproduct-format-main.listproduct-format {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 2fr 1fr 0.5fr 0.5fr 1fr 0.5fr 0.5fr;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    background-color: rgba(128, 6, 31, 0.9);
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.listproduct-format-main p {
+    margin: 0;
+    padding: 12px;
+    font-size: 1em;
+    color: white;
+}
+.listproduct-description {
+    max-height: 100px; /* Adjust the height as needed */
+    overflow-y: auto;
+    padding-right: 10px; /* To make space for scrollbar */
+  }
+  
+.editButton {
+    border: none;
+    border-radius: 12px;
+    background-color: white;
+    width: 64px;
+    height: 29px;
+    font-size: 16px;
+    color: rgba(128, 6, 31, 0.9);
+}
+
+/* Styling for product images */
+.listproduct-product-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Styling for remove icon */
+.listproduct-remove-icon {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    transition: transform 0.2s;
+}
+
+.listproduct-remove-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Styling for edit product form */
+.edit-product-form {
+    display: flex;
+    flex-direction: column;
+    padding: 34px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Ensuring consistent height for input fields */
+.edit-product-form input[type="text"],
+.edit-product-form input[type="number"],
+.edit-product-form input[type="file"],
+.edit-product-form div input[type="text"],
+.edit-product-form div input[type="number"] {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    height: 40px; /* Set a consistent height */
+    box-sizing: border-box; /* Ensures padding is included in height */
+}
+
+.edit-product-form div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.edit-product-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 10px;
+    height: 40px; /* Ensure consistent height for buttons */
+}
+
+.edit-product-form button:hover {
+    background-color: #0056b3;
+}
+
+.edit-product-form button:last-child {
+    background-color: #dc3545;
+}
+
+.edit-product-form button:last-child:hover {
+    background-color: #c82333;
+}

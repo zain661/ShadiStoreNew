@@ -1,0 +1,134 @@
+.subscription-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #882538;
+  padding: 40px 20px;
+  margin-top: 55px;
+}
+
+.subscription-content,
+.instagram-content {
+  flex: 1;
+  text-align: center;
+}
+
+.subscription-content h2,
+.instagram-content h2 {
+  font-size: 1.5em;
+  color: #faf3e0;
+}
+
+.subscription-content .highlight {
+  color: #faf3e0;
+}
+
+.subscription-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.subscription-form input {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #faf3e0;
+  border-radius: 9px;
+  width: 60%;
+  background-color: #faf3e0;
+}
+input::placeholder {
+  color: #882538; /* اللون الذي تريده للنص في placeholder */
+  opacity: 1; /* لضمان عدم تغير الشفافية */
+}
+.subscription-form button {
+  padding: 15px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 9px;
+  background-color: #faf3e0;
+  color: #882538;
+  margin-left: 10px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.subscription-form button:hover {
+  background-color: #9b5664;
+}
+
+.instagram-images {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.instagram-images img {
+  width: 120px;
+  aspect-ratio: 212 / 150;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.instagram-images a {
+  text-decoration: none;
+}
+
+.instagram-images img:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 1280px) {
+  .subscription-content h2,
+  .instagram-content h2 {
+    font-size: 1.3em;
+  }
+  .instagram-images img {
+    width: 80px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .subscription-content h2,
+  .instagram-content h2 {
+    font-size: 1.1em;
+  }
+  .subscription-form input {
+    font-size: 0.8em;
+  }
+  .subscription-form button {
+    font-size: 0.8em;
+  }
+  .instagram-images img {
+    width: 60px;
+  }
+}
+
+@media (max-width: 800px) {
+  .subscription-container {
+    justify-content: center;
+    gap: 32px;
+    flex-direction: column;
+  }
+  .subscription-form input {
+    font-size: 0.8em;
+  }
+  .subscription-form button {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 500px) {
+  .subscription-form input {
+    font-size: 0.7em;
+  }
+  .subscription-form button {
+    font-size: 0.7em;
+  }
+  .instagram-images img {
+    width: 55px;
+  }
+}

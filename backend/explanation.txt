@@ -1,0 +1,25 @@
+Commands:
+The npm init command is used to create a new Node.js project and generate a package.json file. This file holds various metadata relevant to the project, including the project’s name, version, description, main file, scripts, author, license, and dependencies. This file is essential for managing the project and its dependencies.
+
+Running npm i express installs the Express.js framework for your Node.js project. Express is a minimal and flexible Node.js web application framework that provides robust features for building web and mobile applications.
+
+Running npm i jsonwebtoken installs the jsonwebtoken package for your Node.js project. This package is used for creating and verifying JSON Web Tokens (JWT), which are a compact, URL-safe means of representing claims between two parties, When a user logs in, the server can generate a JWT and send it to the user's browser. The browser stores the token and includes it in the header of future requests to the server. The server can then verify the token to ensure the request is from an authenticated user.
+
+Running npm i mongoose installs the mongoose package for your Node.js project. Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node.js. It provides a straightforward, schema-based solution to model your application data, including built-in type casting, validation, query building, and business logic hooks.
+
+CORS (Cross-Origin Resource Sharing) هو معيار يسمح لصفحات الويب من مجال (Origin) واحد بطلب موارد من مجال آخر. بشكل افتراضي، المتصفحات تمنع هذه الطلبات لأسباب أمنية. عندما تحتاج إلى السماح لهذه الطلبات، يمكن استخدام حزمة CORS في تطبيقات Node.js.كيف يعمل CORS؟
+طلب الموارد عبر المجالات:
+
+عندما يرسل المتصفح طلبًا إلى خادم مختلف (مثلاً من http://example.com إلى http://api.example.com)، يقوم الخادم بالتحقق مما إذا كان الطلب مسموحًا به أم لا.
+تكوين الخادم للسماح بالطلبات:
+
+باستخدام حزمة CORS، يمكنك تحديد من يمكنه الوصول إلى خادمك. في المثال أعلاه، قمنا بتمكين CORS لجميع الطلبات (أي السماح لجميع المجالات بالوصول).
+تخصيص إعدادات CORS:
+
+يمكنك تخصيص إعدادات CORS لتحديد المجالات، أنواع الطلبات، والرؤوس المسموح به
+
+أهمية Multer واستخداماته
+إدارة الملفات: Multer يجعل عملية رفع الملفات وتنظيمها على الخادم سهلة وفعالة.
+تطبيقات ويب: يستخدم في تطبيقات الويب حيث يحتاج المستخدمون إلى رفع ملفات مثل الصور، الفيديوهات، أو المستندات.
+التعامل مع البيانات الكبيرة: Multer يستطيع التعامل مع تحميلات البيانات الكبيرة بشكل فعال.
+باستخدام Multer، يمكنك بسهولة تمكين المستخدمين من رفع ملفات إلى خادمك، مما يتيح لك تقديم ميزات مثل تحميل الصور، إنشاء ملفات تقارير، أو أي خدمة أخرى تتطلب رفع ملفات.

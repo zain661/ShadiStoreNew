@@ -1,0 +1,168 @@
+.container {
+  display: flex;
+  min-height: calc(100vh - 108px);
+  background: rgba(128, 6, 31, 0.9);
+  position: relative;
+  padding: 10px;
+}
+
+.left,
+.right {
+  flex: 1;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-container {
+  text-align: center;
+  font-family: 'Amiri', serif;
+}
+
+.text-container h1 {
+  font-size: 3.5em;
+  color: #faf3e0;
+  margin-bottom: 40px; /* Adjust spacing between the two texts */
+}
+
+.text-container h2 {
+  font-size: 2.5em;
+  color: #faf3e0;
+}
+
+.h3 {
+  text-align: center;
+  margin-top: 20px;
+  color: #faf3e0;
+}
+
+.h3 h3 {
+  font-size: 1.3em;
+  color: #faf3e0;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-container {
+  width: 550px; /* ثابت العرض */
+  height: 550px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50px;
+  transition: opacity 1s ease-in-out;
+}
+
+img.fade-enter {
+  opacity: 0;
+}
+
+img.fade-enter-active {
+  opacity: 1;
+}
+
+img.fade-exit {
+  opacity: 1;
+}
+
+img.fade-exit-active {
+  opacity: 0;
+}
+
+@media (max-width: 1280px) {
+  .text-container h1 {
+    font-size: 3em;
+  }
+  .container {
+    min-height: calc(100vh - 64px);
+  }
+
+  .text-container h2 {
+    font-size: 2.1em;
+  }
+
+  .h3 h3 {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 1024px) {
+  .text-container h1 {
+    font-size: 2.3em;
+  }
+
+  .text-container h2 {
+    font-size: 1.7em;
+  }
+
+  .h3 h3 {
+    font-size: 1.2em;
+  }
+  .image-container {
+    width: 490px;
+    height: 490px;
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    min-height: calc(100vh - 60px) !important;
+    flex-direction: column;
+    height: fit-content;
+  }
+
+  .text-container {
+    margin-bottom: 0;
+  }
+
+  .text-container h1 {
+    font-size: 2.1em;
+    margin-bottom: 0;
+  }
+
+  .text-container h2 {
+    font-size: 1.7em;
+  }
+
+  .h3 h3 {
+    font-size: 1.1em;
+  }
+
+  .image-container {
+    margin: 32px 0;
+    width: 440px;
+    height: 440px;
+  }
+}
+
+@media (max-width: 500px) {
+  .text-container h1 {
+    font-size: 1.6em;
+    margin-bottom: 0;
+  }
+
+  .text-container h2 {
+    font-size: 1.3em;
+  }
+
+  .h3 h3 {
+    font-size: 0.8em;
+  }
+
+  .image-container {
+    margin: 32px 0;
+    width: 320px;
+    height: 320px;
+  }
+}

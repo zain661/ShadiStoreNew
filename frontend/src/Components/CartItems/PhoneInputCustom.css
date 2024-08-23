@@ -1,0 +1,5 @@
+.phone-input-custom input {
+  direction: rtl; /* Change text direction to right-to-left */
+  text-align: right; /* Align the placeholder text to the right */
+}
+

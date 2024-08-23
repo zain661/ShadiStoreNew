@@ -1,0 +1,128 @@
+.cartitems {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1200px;
+  font-family: Arial, sans-serif;
+}
+
+.cartitems-format-main {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 20px;
+  align-items: center;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.cartitems-format-main p {
+  margin: 0;
+  font-weight: bold;
+}
+
+.cartitems-format {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 20px;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.carticon-product-icon {
+  max-width: 50px;
+  border-radius: 8px;
+}
+
+.cartitems-quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cartitems-quantity button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.cartitems-quantity button:hover {
+  background-color: #0056b3;
+}
+
+.cartitems-quantity span {
+  font-size: 16px;
+  margin: 0 10px;
+}
+
+.cartitems-remove-icon {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
+.cartitems-down {
+  margin-top: 30px;
+}
+
+.cartitems-total {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cartitems-total-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.cartitems-address {
+  margin-top: 20px;
+}
+
+.cartitems-address input,
+.cartitems-address select {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  padding: 10px 20px;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.alert {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+@media (max-width: 400px) {
+  .cartitems-format-main p {
+    font-size: 12px !important;
+  }
+}

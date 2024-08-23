@@ -1,0 +1,134 @@
+.shop-category {
+  font-family: 'Arial', sans-serif;
+  color: rgba(128, 6, 31, 0.9);
+}
+
+.shopcategory-banner {
+  display: block;
+  margin: 30px auto;
+  width: 82%;
+  border-radius: 10px;
+}
+
+.shopcategory-products {
+  margin: 20px 170px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Adjust to 3 columns */
+  gap: 20px; /* Uniform gap for rows and columns */
+  justify-content: center;
+}
+
+.shopcategory-loadmore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 150px auto;
+  width: 233px;
+  height: 69px;
+  border-radius: 75px;
+  background: #ededed;
+  color: #787878;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.shopcategory-loadmore:hover {
+  background: #787878;
+  color: #ededed;
+}
+
+@media (max-width: 1280px) {
+  .shopcategory-banner {
+    margin: 20px auto;
+    width: 90%;
+  }
+  .shopcategory-products {
+    width: 90%;
+    margin: 10px auto;
+    gap: 30px;
+  }
+  .shopcategory-loadmore {
+    margin: 100px auto;
+    width: 200px;
+    height: 60px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1000px) {
+    .shopcategory-products {
+      width: 95%;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+}
+@media (max-width: 800px) {
+  .shopcategory-banner {
+    width: 95%;
+  }
+  .shopcategory-products {
+    width: 95%;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .shopcategory-products .item {
+    width: 90% !important;
+  }
+  .shopcategory-loadmore {
+    margin: 60px auto;
+    width: 150px;
+    height: 40px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 500px) {
+  .shopcategory-products {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+
+.shopcategory-products .item {
+    width: auto !important;
+}
+
+.shopcategory-products .item img {
+    min-height: 400px;
+    width: 100%;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgba(128, 6, 31, 0.9);
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.item img {
+  width: 100%;
+  aspect-ratio: 1;
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.item h2 {
+  color: rgba(128, 6, 31, 0.9);
+}
+
+.item p {
+  color: rgba(128, 6, 31, 0.9);
+  margin: 5px 0;
+}
+
+.item:hover {
+  transform: scale(1.05);
+}

@@ -18,7 +18,7 @@ const LoginSignup = () => {
   const login = async ()=>{
     console.log("login function", formData);
     let responseData;
-    await fetch('process.env.SERVER_URL/login',{
+    await fetch(`${process.env.SERVER_URL}/login`,{
       method: 'POST',
       headers:{
         Accept: 'application/form-data',
@@ -38,7 +38,7 @@ const LoginSignup = () => {
   const signup = async ()=>{
     console.log("signup function", formData);
     let responseData;
-    await fetch('process.env.SERVER_URL/signup',{
+    await fetch(`${process.env.SERVER_URL}/signup`,{
       method: 'POST',
       headers:{
         Accept: 'application/form-data',

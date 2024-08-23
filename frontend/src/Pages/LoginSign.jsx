@@ -10,7 +10,7 @@ const LoginSignup = () => {
     password:"",
     email:"",
   });
-
+  const url4 = "https://shadi-store-new.vercel.app";
   const changeHandler = (e)=>{
     setFormData({...formData,[e.target.name] : e.target.value});
   }
@@ -18,7 +18,7 @@ const LoginSignup = () => {
   const login = async ()=>{
     console.log("login function", formData);
     let responseData;
-    await fetch('http://localhost:4000/login',{
+    await fetch('url4/login',{
       method: 'POST',
       headers:{
         Accept: 'application/form-data',
@@ -38,7 +38,7 @@ const LoginSignup = () => {
   const signup = async ()=>{
     console.log("signup function", formData);
     let responseData;
-    await fetch('http://localhost:4000/signup',{
+    await fetch('url4/signup',{
       method: 'POST',
       headers:{
         Accept: 'application/form-data',

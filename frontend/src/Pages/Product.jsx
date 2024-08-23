@@ -8,7 +8,7 @@ const Product = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const url = "https://shadi-store-new.vercel.app";
-  useEffect(() => 
+  useEffect(() => {
     const fetchProduct = async () => {
       try {
         const response = await fetch(`url/product/${productId}`);

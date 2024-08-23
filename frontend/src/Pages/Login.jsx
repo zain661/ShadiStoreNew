@@ -8,7 +8,7 @@ const Login = () => {
     const [success, setSuccess] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
-
+    const url3 = "https://shadi-store-new.vercel.app";
     useEffect(() => {
         const query = new URLSearchParams(location.search);
         const verified = query.get('verified');
@@ -25,7 +25,7 @@ const Login = () => {
         e.preventDefault();
         setError('');
         try {
-            const response = await fetch('http://localhost:4000/login', {
+            const response = await fetch('url3/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

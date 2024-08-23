@@ -1,9 +1,8 @@
-// ListProduct.js
 import { useEffect, useState } from 'react';
 import './ListProduct.css';
 import cross_icon from '../../assets/x.png';
-import CustomAlert from './CustomAlert'; // Adjust the import path as needed
-import './CustomAlert.css'; // Import the CSS for CustomAlert
+import CustomAlert from './CustomAlert'; // تأكد من تعديل مسار الاستيراد حسب الحاجة
+import './CustomAlert.css'; // استيراد CSS الخاص بـ CustomAlert
 
 const ListProduct = () => {
     const [allproducts, setAllProducts] = useState([]);
@@ -15,19 +14,27 @@ const ListProduct = () => {
     const [productToRemove, setProductToRemove] = useState(null);
 
     const fetchInfo = async () => {
-        await fetch(`${process.env.SERVER_URL}/allproducts`)
-            .then((res) => res.json())
-            .then((data) => {
-                setAllProducts(data);
-            });
+        try {
+            console.log("Server URL:", process.env.REACT_APP_SERVER_URL);
+    
+            
+            const url = `${process.env.REACT_APP_SERVER_URL}/allproducts`;
+            console.log("Fetching from:", url);
+    
+            const response = await fetch(url);
+            const data = await response.json();
+            setAllProducts(data);
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
     };
-
+    
     useEffect(() => {
         fetchInfo();
     }, []);
 
     const remove_product = async (id) => {
-        await fetch(`${process.env.SERVER_URL}/removeproduct`, {
+        await fetch(`${process.env.REACT_APP_SERVER_URL}/removeproduct`, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -67,7 +74,7 @@ const ListProduct = () => {
             const formData = new FormData();
             formData.append('product', selectedFile);
 
-            const uploadResponse = await fetch(`${process.env.SERVER_URL}/upload`, {
+            const uploadResponse = await fetch(`${process.env.REACT_APP_SERVER_URL}/upload`, {
                 method: 'POST',
                 body: formData,
             });
@@ -81,7 +88,7 @@ const ListProduct = () => {
             image: imageUrl,
         };
 
-        await fetch(`${process.env.SERVER_URL}/updateProduct`, {
+        await fetch(`${process.env.REACT_APP_SERVER_URL}/updateProduct`, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -258,7 +265,7 @@ const ListProduct = () => {
                                     src={cross_icon}
                                     alt=""
                                 />
-                                <button onClick={() => handleEditClick(product)} className='editButton'>Edit</button>
+                                <button onClick={() => handleEditClick(product)} className='listproduct-edit-btn'>Edit</button>
                             </div>
                         )}
                         <hr />
@@ -267,9 +274,9 @@ const ListProduct = () => {
             </div>
             {showAlert && (
                 <CustomAlert
-                    message="Are you sure you want to remove this product?"
                     onConfirm={handleConfirmRemove}
                     onCancel={handleCancelRemove}
+                    message={`Are you sure you want to remove the product "${productToRemove.name}"?`}
                 />
             )}
         </div>

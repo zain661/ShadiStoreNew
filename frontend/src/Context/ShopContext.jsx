@@ -47,7 +47,7 @@ const updateCartItemQuantity = (itemId, size, delta) => {
     const token = localStorage.getItem("auth-token");
     if (token) {
       try {
-        const response = await fetch(`${process.env.SERVER_URL}/cart`, {
+        const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/cart`, {
           method: "GET",
           headers: {
             Accept: "application/json",
@@ -152,7 +152,7 @@ const updateCartItemQuantity = (itemId, size, delta) => {
     const token = localStorage.getItem("auth-token");
   
     if (token) {
-      fetch(`${process.env.SERVER_URL}/addtocart`, {
+      fetch(`${process.env.REACT_APP_SERVER_URL}/addtocart`, {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -188,7 +188,7 @@ const updateCartItemQuantity = (itemId, size, delta) => {
     const token = localStorage.getItem("auth-token");
     if (token) {
       try {
-        const response = await fetch(`${process.env.SERVER_URL}/removefromcart`, {
+        const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/removefromcart`, {
           method: "POST",
           headers: {
             Accept: "application/json",
@@ -202,7 +202,7 @@ const updateCartItemQuantity = (itemId, size, delta) => {
           const data = await response.json();
           console.log(data);
 
-          const cartResponse = await fetch(`${process.env.SERVER_URL}/cart`, {
+          const cartResponse = await fetch(`${process.env.REACT_APP_SERVER_URL}/cart`, {
             method: "GET",
             headers: {
               "auth-token": token,
@@ -296,7 +296,7 @@ const updateCartItemQuantity = (itemId, size, delta) => {
     }
 
     try {
-      const response = await fetch(`${process.env.SERVER_URL}/createorder`, {
+      const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/createorder`, {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -325,7 +325,7 @@ const updateCartItemQuantity = (itemId, size, delta) => {
 
   const updateProduct = async (productData) => {
     try {
-      const response = await fetch(`${process.env.SERVER_URL}/updateproduct`, {
+      const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/updateproduct`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

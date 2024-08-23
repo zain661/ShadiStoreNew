@@ -1,5 +1,6 @@
 #!/bin/bash
 set -ex
+aws ecr get-login-password --region us-east-1 --profile s | docker login --username AWS --password-stdin 491085412067.dkr.ecr.us-east-1.amazonaws.com
 docker build -t 491085412067.dkr.ecr.us-east-1.amazonaws.com/admin:v1 -f admin/Dockerfile admin/ && \
 docker build -t 491085412067.dkr.ecr.us-east-1.amazonaws.com/be:v1 -f backend/Dockerfile backend/ && \
 docker build -t 491085412067.dkr.ecr.us-east-1.amazonaws.com/fe:v1 -f frontend/Dockerfile frontend/ && \

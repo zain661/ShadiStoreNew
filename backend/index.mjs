@@ -35,7 +35,7 @@ app.get("/", (req, res) => {
 });
 app.use(
   cors({
-    origin: ["https://shadi-store-new-8x4v.vercel.app"],
+    origin: [`${process.env.CLIENT_URL}`],
     methods: ["POST", "GET", "DELETE", "PUT"],
     credentials: true,
   }),

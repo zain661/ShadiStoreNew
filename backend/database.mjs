@@ -4,8 +4,7 @@ import mongoose from 'mongoose';
 const connectDB = async () => {
     try {
         await mongoose.connect('mongodb+srv://zaynassaf2001:mongoRawan2000@cluster0.0hiogxf.mongodb.net/', {
-            useNewUrlParser: true,
-            // useUnifiedTopology: true
+            serverSelectionTimeoutMS: 30000
         });
         console.log('MongoDB connected');
     } catch (error) {

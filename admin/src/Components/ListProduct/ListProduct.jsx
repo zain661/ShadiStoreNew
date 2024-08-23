@@ -15,7 +15,7 @@ const ListProduct = () => {
     const [productToRemove, setProductToRemove] = useState(null);
 
     const fetchInfo = async () => {
-        await fetch('http://localhost:4000/allproducts')
+        await fetch(`${process.env.SERVER_URL}/allproducts`)
             .then((res) => res.json())
             .then((data) => {
                 setAllProducts(data);
@@ -27,7 +27,7 @@ const ListProduct = () => {
     }, []);
 
     const remove_product = async (id) => {
-        await fetch('http://localhost:4000/removeproduct', {
+        await fetch(`${process.env.SERVER_URL}/removeproduct`, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -67,7 +67,7 @@ const ListProduct = () => {
             const formData = new FormData();
             formData.append('product', selectedFile);
 
-            const uploadResponse = await fetch('http://localhost:4000/upload', {
+            const uploadResponse = await fetch(`${process.env.SERVER_URL}/upload`, {
                 method: 'POST',
                 body: formData,
             });
@@ -81,7 +81,7 @@ const ListProduct = () => {
             image: imageUrl,
         };
 
-        await fetch('http://localhost:4000/updateProduct', {
+        await fetch(`${process.env.SERVER_URL}/updateProduct`, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',

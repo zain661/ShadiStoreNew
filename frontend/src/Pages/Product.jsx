@@ -11,7 +11,7 @@ const Product = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await fetch(`process.env.SERVER_URL/product/${productId}`);
+        const response = await fetch(`${process.env.SERVER_URL}/product/${productId}`);
         if (!response.ok) {
           throw new Error('Product not found');
         }

@@ -12,7 +12,7 @@ const VerifyEmail = () => {
         const token = query.get('token');
 
         if (token) {
-            fetch(`http://localhost:4000/verify-email?token=${token}`)
+            fetch(`https://shadi-store-new.vercel.app/verify-email?token=${token}`)
                 .then(response => response.json())
                 .then(data => {
                     if (data.message) {

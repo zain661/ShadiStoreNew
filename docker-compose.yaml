@@ -6,27 +6,17 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - REACT_APP_BACKEND_URL=http://backend:4000
-      - REACT_APP_ADMIN_URL=http://admin:5173
-    depends_on:
-      - backend
-      - admin
+      - SERVER_URL=http://backend:4000
 
   backend:
     image: 491085412067.dkr.ecr.us-east-1.amazonaws.com/be:v1
     ports:
       - "4000:4000"
     environment:
-      - ADMIN_URL=http://admin:5173
-    depends_on:
-      - db
-      - admin
-
+      - CLIENT_URL=http://frontend:3000
   admin:
     image: 491085412067.dkr.ecr.us-east-1.amazonaws.com/admin:v1
     ports:
       - "5173:5173"
     environment:
-      - BACKEND_URL=http://backend:4000
-
-
+      - SERVER_URL=http://backend:4000

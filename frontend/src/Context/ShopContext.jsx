@@ -72,15 +72,34 @@ const updateCartItemQuantity = (itemId, size, delta) => {
 
   const fetchProducts = async () => {
     try {
-      console.log("here 2")
-      const response = await fetch(`${process.env.SERVER_URL}/allproducts`);
-      console.log("suha")
-      const data = await response.json();
-      setAll_Product(data);
+      console.log("Server URL:", process.env.REACT_APP_SERVER_URL);
+
+      // Log the full URL to ensure it's correct
+      const url = `${process.env.REACT_APP_SERVER_URL}/allproducts`;
+      console.log("Fetching from:", url);
+  
+      // Fetch the response from the API
+      const response = await fetch(url);
+  
+      // Log the status and content-type of the response
+      console.log("Status:", response.status);
+      console.log("Headers:", response.headers.get('content-type'));
+  
+      // Check if the response content-type is JSON
+      if (response.headers.get('content-type')?.includes('application/json')) {
+        const data = await response.json();
+        setAll_Product(data);
+      } else {
+        // If not JSON, log the raw response text
+        const text = await response.text();
+        console.error("Expected JSON, got:", text);
+      }
     } catch (error) {
       console.error("Error fetching products:", error);
     }
-  };
+};
+
+  
   // const fetchProducts = async () => {
   //   try {
   //     const response = await fetch(`${process.env.SERVER_URL}/allproducts`, {

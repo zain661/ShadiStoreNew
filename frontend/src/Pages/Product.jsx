@@ -7,7 +7,6 @@ const Product = () => {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const process.env.SERVER_URL = "https://shadi-store-new.vercel.app";
   useEffect(() => {
     const fetchProduct = async () => {
       try {

@@ -5,7 +5,7 @@ const Orders = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_SERVER_URL}/allorders`)
+        fetch(`${import.meta.env.VITE_SERVER_URL}/allorders`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');

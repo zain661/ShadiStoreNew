@@ -15,10 +15,10 @@ const ListProduct = () => {
 
     const fetchInfo = async () => {
         try {
-            console.log("Server URL:", process.env.REACT_APP_SERVER_URL);
+            console.log("Server URL:", import.meta.env.VITE_SERVER_URL);
     
             
-            const url = `${process.env.REACT_APP_SERVER_URL}/allproducts`;
+            const url = `${import.meta.env.VITE_SERVER_URL}/allproducts`;
             console.log("Fetching from:", url);
     
             const response = await fetch(url);
@@ -34,7 +34,7 @@ const ListProduct = () => {
     }, []);
 
     const remove_product = async (id) => {
-        await fetch(`${process.env.REACT_APP_SERVER_URL}/removeproduct`, {
+        await fetch(`${import.meta.env.VITE_SERVER_URL}/removeproduct`, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -74,7 +74,7 @@ const ListProduct = () => {
             const formData = new FormData();
             formData.append('product', selectedFile);
 
-            const uploadResponse = await fetch(`${process.env.REACT_APP_SERVER_URL}/upload`, {
+            const uploadResponse = await fetch(`${import.meta.env.VITE_SERVER_URL}/upload`, {
                 method: 'POST',
                 body: formData,
             });
@@ -88,7 +88,7 @@ const ListProduct = () => {
             image: imageUrl,
         };
 
-        await fetch(`${process.env.REACT_APP_SERVER_URL}/updateProduct`, {
+        await fetch(`${import.meta.env.VITE_SERVER_URL}/updateProduct`, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',

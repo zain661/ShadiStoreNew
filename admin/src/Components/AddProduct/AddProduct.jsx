@@ -71,38 +71,39 @@ const AddProduct = () => {
       alert("Please fill out all fields.");
       return;
     }
-
+  
     if (isNaN(productDetails.price)) {
       alert("Price must be a number.");
       return;
     }
-
+  
     console.log(productDetails);
     let responseData;
     let product = productDetails;
-
+  
     let formData = new FormData();
     formData.append("product", image);
-
+  
     try {
-      const uploadResponse = await fetch(`${process.env.REACT_APP_SERVER_URL}/upload`, {
+      const uploadResponse = await fetch(`${import.meta.env.VITE_SERVER_URL}/upload`, {
         method: "POST",
         headers: {
           Accept: "application/json",
         },
         body: formData,
       });
+      console.log(process.env);
 
       if (!uploadResponse.ok) {
         throw new Error("Failed to upload image");
       }
-
+  
       responseData = await uploadResponse.json();
-
+  
       if (responseData.success) {
         product.image = responseData.image_url;
         console.log(product);
-        const addProductResponse = await fetch(`${process.env.REACT_APP_SERVER_URL}/addproduct`, {
+        const addProductResponse = await fetch(`${import.meta.env.VITE_SERVER_URL}/addproduct`, {
           method: "POST",
           headers: {
             Accept: "application/json",
@@ -110,9 +111,9 @@ const AddProduct = () => {
           },
           body: JSON.stringify(product),
         });
-
+  
         const addProductData = await addProductResponse.json();
-
+  
         if (addProductData.success) {
           alert("Product added successfully");
           resetForm();
@@ -125,6 +126,7 @@ const AddProduct = () => {
       alert("Failed to add product. Please check the console for more details.");
     }
   };
+  
 
   return (
     <div className="add-product">

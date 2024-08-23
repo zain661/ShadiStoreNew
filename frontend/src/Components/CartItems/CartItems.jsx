@@ -27,14 +27,14 @@ const CartItems = () => {
             console.log(cartItems)
             setLoading(true);
             try {
-                const citiesResponse = await fetch("https://shadi-store-new.vercel.app/api/cities");
+                const citiesResponse = await fetch(`${process.env.SERVER_URL}/api/cities`);
                 if (!citiesResponse.ok) {
                     throw new Error(`Failed to fetch cities. Status: ${citiesResponse.status}`);
                 }
                 const citiesData = await citiesResponse.json();
                 setCities(citiesData);
 
-                const feesResponse = await fetch('https://shadi-store-new.vercel.app/api/fees');
+                const feesResponse = await fetch(`${process.env.SERVER_URL}/api/fees`);
                 if (!feesResponse.ok) {
                     throw new Error(`Failed to fetch shipping fees. Status: ${feesResponse.status}`);
                 }
@@ -66,7 +66,7 @@ const CartItems = () => {
 
     const fetchAreas = async (cityId) => {
         try {
-            const response = await fetch(`https://shadi-store-new.vercel.app/api/areas?cityId=${cityId}`);
+            const response = await fetch(`${process.env.SERVER_URL}/api/areas?cityId=${cityId}`);
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }

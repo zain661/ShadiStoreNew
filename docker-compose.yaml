@@ -6,17 +6,17 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - SERVER_URL=http://backend:4000
+      - SERVER_URL=http://localhost:4000
 
   backend:
     image: 491085412067.dkr.ecr.us-east-1.amazonaws.com/be:v1
     ports:
       - "4000:4000"
     environment:
-      - CLIENT_URL=http://frontend:3000
+      - CLIENT_URL=http://localhost:3000
   admin:
     image: 491085412067.dkr.ecr.us-east-1.amazonaws.com/admin:v1
     ports:
       - "5173:5173"
     environment:
-      - SERVER_URL=http://backend:4000
+      - SERVER_URL=http://localhost:4000

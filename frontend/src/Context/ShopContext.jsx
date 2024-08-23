@@ -17,7 +17,7 @@ const ShopContextProvider = (props) => {
 });
   const [all_product, setAll_Product] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const url2 = "https://shadi-store-new.vercel.app";
+
 //   useEffect(() => {
 //     const storedCartItems = JSON.parse(localStorage.getItem("cartItems")) || {};
 //     setCartItems(storedCartItems);
@@ -47,7 +47,7 @@ const updateCartItemQuantity = (itemId, size, delta) => {
     const token = localStorage.getItem("auth-token");
     if (token) {
       try {
-        const response = await fetch("url2/cart", {
+        const response = await fetch("process.env.URL/cart", {
           method: "GET",
           headers: {
             Accept: "application/json",
@@ -73,7 +73,7 @@ const updateCartItemQuantity = (itemId, size, delta) => {
   const fetchProducts = async () => {
     try {
       console.log("here 2")
-      const response = await fetch("url2/allproducts");
+      const response = await fetch("process.env.URL/allproducts");
       console.log("suha")
       const data = await response.json();
       setAll_Product(data);
@@ -83,7 +83,7 @@ const updateCartItemQuantity = (itemId, size, delta) => {
   };
   // const fetchProducts = async () => {
   //   try {
-  //     const response = await fetch("url2/allproducts", {
+  //     const response = await fetch("process.env.URL/allproducts", {
        
   //     });
   //     const data = await response.json();
@@ -133,7 +133,7 @@ const updateCartItemQuantity = (itemId, size, delta) => {
     const token = localStorage.getItem("auth-token");
   
     if (token) {
-      fetch("url2/addtocart", {
+      fetch("process.env.URL/addtocart", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -169,7 +169,7 @@ const updateCartItemQuantity = (itemId, size, delta) => {
     const token = localStorage.getItem("auth-token");
     if (token) {
       try {
-        const response = await fetch("url2/removefromcart", {
+        const response = await fetch("process.env.URL/removefromcart", {
           method: "POST",
           headers: {
             Accept: "application/json",
@@ -183,7 +183,7 @@ const updateCartItemQuantity = (itemId, size, delta) => {
           const data = await response.json();
           console.log(data);
 
-          const cartResponse = await fetch("url2/cart", {
+          const cartResponse = await fetch("process.env.URL/cart", {
             method: "GET",
             headers: {
               "auth-token": token,
@@ -277,7 +277,7 @@ const updateCartItemQuantity = (itemId, size, delta) => {
     }
 
     try {
-      const response = await fetch("url2/createorder", {
+      const response = await fetch("process.env.URL/createorder", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -306,7 +306,7 @@ const updateCartItemQuantity = (itemId, size, delta) => {
 
   const updateProduct = async (productData) => {
     try {
-      const response = await fetch("url2/updateproduct", {
+      const response = await fetch("process.env.URL/updateproduct", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

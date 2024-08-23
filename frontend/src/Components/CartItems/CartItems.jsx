@@ -27,7 +27,7 @@ const CartItems = () => {
             console.log(cartItems)
             setLoading(true);
             try {
-                const citiesResponse = await fetch(https://shadi-store-new.vercel.app/api/cities');
+                const citiesResponse = await fetch("https://shadi-store-new.vercel.app/api/cities");
                 if (!citiesResponse.ok) {
                     throw new Error(`Failed to fetch cities. Status: ${citiesResponse.status}`);
                 }

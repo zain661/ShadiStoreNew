@@ -17,6 +17,7 @@ const ShopContextProvider = (props) => {
 });
   const [all_product, setAll_Product] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const url2 = "https://shadi-store-new.vercel.app";
 //   useEffect(() => {
 //     const storedCartItems = JSON.parse(localStorage.getItem("cartItems")) || {};
 //     setCartItems(storedCartItems);
@@ -46,7 +47,7 @@ const updateCartItemQuantity = (itemId, size, delta) => {
     const token = localStorage.getItem("auth-token");
     if (token) {
       try {
-        const response = await fetch("http://localhost:4000/cart", {
+        const response = await fetch("url2/cart", {
           method: "GET",
           headers: {
             Accept: "application/json",
@@ -72,7 +73,7 @@ const updateCartItemQuantity = (itemId, size, delta) => {
   const fetchProducts = async () => {
     try {
       console.log("here 2")
-      const response = await fetch("http://localhost:4000/allproducts");
+      const response = await fetch("url2/allproducts");
       console.log("suha")
       const data = await response.json();
       setAll_Product(data);
@@ -82,7 +83,7 @@ const updateCartItemQuantity = (itemId, size, delta) => {
   };
   // const fetchProducts = async () => {
   //   try {
-  //     const response = await fetch("http://localhost:4000/allproducts", {
+  //     const response = await fetch("url2/allproducts", {
        
   //     });
   //     const data = await response.json();
@@ -132,7 +133,7 @@ const updateCartItemQuantity = (itemId, size, delta) => {
     const token = localStorage.getItem("auth-token");
   
     if (token) {
-      fetch("http://localhost:4000/addtocart", {
+      fetch("url2/addtocart", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -168,7 +169,7 @@ const updateCartItemQuantity = (itemId, size, delta) => {
     const token = localStorage.getItem("auth-token");
     if (token) {
       try {
-        const response = await fetch("http://localhost:4000/removefromcart", {
+        const response = await fetch("url2/removefromcart", {
           method: "POST",
           headers: {
             Accept: "application/json",
@@ -182,7 +183,7 @@ const updateCartItemQuantity = (itemId, size, delta) => {
           const data = await response.json();
           console.log(data);
 
-          const cartResponse = await fetch("http://localhost:4000/cart", {
+          const cartResponse = await fetch("url2/cart", {
             method: "GET",
             headers: {
               "auth-token": token,
@@ -276,7 +277,7 @@ const updateCartItemQuantity = (itemId, size, delta) => {
     }
 
     try {
-      const response = await fetch("http://localhost:4000/createorder", {
+      const response = await fetch("url2/createorder", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -305,7 +306,7 @@ const updateCartItemQuantity = (itemId, size, delta) => {
 
   const updateProduct = async (productData) => {
     try {
-      const response = await fetch("http://localhost:4000/updateproduct", {
+      const response = await fetch("url2/updateproduct", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

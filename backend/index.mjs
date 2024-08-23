@@ -33,13 +33,13 @@ connectDB();
 app.get("/", (req, res) => {
   res.send("Express App is running");
 });
-// app.use(
-//   cors({
-//     origin: ["https://shadi-store.vercel.app"],
-//     methods: ["POST", "GET", "DELETE", "PUT"],
-//     credentials: true,
-//   }),
-// );
+app.use(
+  cors({
+    origin: [""],
+    methods: ["POST", "GET", "DELETE", "PUT"],
+    credentials: true,
+  }),
+);
 // app.use((req, res, next) => {
 //   res.header("Access-Control-Allow-Origin", "http://localhost:3000/");
 //   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -49,14 +49,14 @@ app.get("/", (req, res) => {
 
 
 // Middleware to set CORS headers
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-  );
-  next();
-});
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+//   );
+//   next();
+// });
 
 
 

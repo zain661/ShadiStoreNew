@@ -18,7 +18,8 @@ import dotenv from "dotenv";
 import nodemailer from "nodemailer";
 import bcrypt from "bcrypt";
 //Load environment variables from a .env file into process.env.
-dotenv.config();
+const environment = process.env.NODE_ENV || 'development';
+dotenv.config({ path: `.env.${environment}` });
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
